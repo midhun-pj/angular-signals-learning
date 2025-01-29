@@ -1,0 +1,21 @@
+<section class="course-container">
+  <article class="course-header">
+    <h1>{{ course()?.title }}</h1>
+    <img class="course-image" [src]="course()?.iconUrl" />
+  </article>
+
+  <div class="table-container">
+    <table class="results-table">
+      @for(lesson of lessons(); track lesson.id) {
+      <tr>
+        <td>
+          {{ lesson.description }}
+        </td>
+        <td>
+          {{ lesson.duration }}
+        </td>
+      </tr>
+      }
+    </table>
+  </div>
+</section>

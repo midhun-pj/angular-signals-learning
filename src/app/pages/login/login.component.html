@@ -1,0 +1,25 @@
+<section class="login">
+  <div class="login-form" [formGroup]="form">
+    <h3>Login</h3>
+
+    <article class="form-control">
+      <label>Email:</label>
+      <input placeholder="Enter your email" formControlName="email" />
+    </article>
+
+    <article class="form-control">
+      <label>Password:</label>
+      <input
+        type="password"
+        formControlName="password"
+        placeholder="Enter your password"
+      />
+    </article>
+  </div>
+
+  <article class="form-actions">
+    <button class="btn" routerLink="/home">Home</button>
+
+    <button class="btn" (click)="onLogin()">Login</button>
+  </article>
+</section>
