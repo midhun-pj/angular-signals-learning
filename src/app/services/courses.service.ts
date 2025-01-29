@@ -39,4 +39,16 @@ export class CoursesService {
     );
     return firstValueFrom(course$);
   }
+
+  async deleteCourse(courseId: string) {
+    const delete$ = this.http.delete(`${this.env.apiRoot}/courses/${courseId}`);
+    return firstValueFrom(delete$);
+  }
+
+  async getCourseById(courseId: string): Promise<Course> {
+    const course$ = this.http.get<Course>(
+      `${this.env.apiRoot}/courses/${courseId}`
+    );
+    return firstValueFrom(course$);
+  }
 }

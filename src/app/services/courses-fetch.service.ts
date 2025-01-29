@@ -38,4 +38,10 @@ export class CoursesServiceWithFetch {
     });
     return response.json();
   }
+
+  async deleteCourse(courseId:string):Promise<void> {
+    await fetch(`${this.env.apiRoot}/courses/${courseId}`, {
+      method: "DELETE"
+    })
+  }
 }
